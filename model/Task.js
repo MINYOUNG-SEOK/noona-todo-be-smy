@@ -11,7 +11,19 @@ const taskSchema = new Schema(
       required: true,
       default: false,
     },
-    author: { type: Schema.Types.ObjectId, required: true, ref: "User" },
+    priority: {
+      type: String,
+      default: false,
+    },
+    description: {
+      type: String,
+      default: "",
+    },
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   { timestamps: true }
 );
